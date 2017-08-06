@@ -6,6 +6,7 @@ function Form(props) {
       <input placeholder="name"/>
       <input placeholder="message"/>
       <button>Submit</button>
+      <button>Show Messages</button>
     </div>
   );
 }
