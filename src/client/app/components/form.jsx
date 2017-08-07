@@ -39,7 +39,7 @@ class Form  extends React.Component{
       <button onClick={()=>{
         this.props.submit(this.state.name, this.state.msg)
         }}>Submit</button>
-      <button>Show Messages</button>
+      <button onClick={this.props.grab}>Show Messages</button>
     </div>
     )
 
