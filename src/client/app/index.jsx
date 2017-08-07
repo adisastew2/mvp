@@ -14,6 +14,21 @@ class App extends React.Component {
     
   }
 
+  grabStuff(){
+    $.ajax({
+      url: '/msgs',
+      method: 'GET',
+      success: (data) => {
+        this.setState({
+          list: data
+        });
+      },
+      error: (err) => {
+        console.log('Some Error:', err);
+      }
+    });
+  }
+
   sendStuff(name, msg){
     console.log('SENDSTUFF CALLED');
     console.log('SENDSTUFF name: ', name);
@@ -31,7 +46,7 @@ class App extends React.Component {
     //   console.log(err);
     // });
 
-    // server gets values but does not console.log 
+    // server gets values but does not console.log success msg
      $.ajax({
       type: "POST",
       url: "/msgs",
@@ -48,7 +63,7 @@ class App extends React.Component {
   render() {
     return(
       <div>
-        <Form submit={this.sendStuff}/>
+        <Form grab={this.grabStuff.bind(this)} submit={this.sendStuff}/>
       </div>
     ) 
   }
