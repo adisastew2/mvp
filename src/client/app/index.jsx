@@ -4,6 +4,7 @@ import axios from 'axios';
 import $ from 'jquery';
 
 import Form from './components/form.jsx';
+import List from './components/list.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -64,6 +65,7 @@ class App extends React.Component {
     return(
       <div>
         <Form grab={this.grabStuff.bind(this)} submit={this.sendStuff}/>
+        <List list={this.state.list}/>
       </div>
     ) 
   }
