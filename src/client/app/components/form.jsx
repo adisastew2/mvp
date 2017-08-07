@@ -36,7 +36,9 @@ class Form  extends React.Component{
     <div>
       <input onChange={this.onChangeName.bind(this)} placeholder="name"/>
       <input onChange={this.onChangeMsg.bind(this)}  placeholder="message"/>
-      <button onClick={this.props.submit}>Submit</button>
+      <button onClick={()=>{
+        this.props.submit(this.state.name, this.state.msg)
+        }}>Submit</button>
       <button>Show Messages</button>
     </div>
     )
